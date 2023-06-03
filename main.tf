@@ -83,12 +83,17 @@ resource "aws_security_group" "web_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+         ingress {
+    from_port   = 3306  # MySQL port
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]  # Restrict access to the public subnet or other specific IPs
+  }
   }
 
 
 resource "aws_instance" "ec2_instance_1"{
         ami = "ami-02eb7a4783e7e9317"
-        count = "2"
         instance_type = "t2.micro"
         tags = {
         Name = "EC2_instance_1"
