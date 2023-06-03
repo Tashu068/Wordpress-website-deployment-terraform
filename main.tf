@@ -90,6 +90,13 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["10.0.1.0/24"]  # Restrict access to the public subnet or other specific IPs
   }
   }
+resource "aws_db_instance" "my_rds_instance" {
+  identifier            = "my-rds-instance"
+  engine                = "mysql"
+  engine_version        = "5.7"
+  instance_class        = "db.t2.micro"
+  username              = "admin"
+  password              =
 
 
 resource "aws_instance" "ec2_instance_1"{
