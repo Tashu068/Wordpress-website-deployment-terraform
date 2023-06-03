@@ -1,3 +1,5 @@
+# Make sure you have terraform and docker installed in your ec2 instance
+
 # Wordpress-website-deployment-terraform
 Create a Terraform script to deploy a VM. The VM should be in public subnet.
 #please follow main.tf
