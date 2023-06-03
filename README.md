@@ -19,8 +19,16 @@ use sudo if permission deneid
  $ docker login
  $ docker push your-dockerhub-username/my-apache-image:tag
  
-# Deploy the RDS on AWS and it should be on private subnet.
+# Deploy the RDS on AWS and it should be on private subnet. main.tf for code
 $ terraform plan 
 $ terraform apply
+
+# Connect your Wordpress container with RDS database follow docker compose for code
+#run the following command after creating the docker-compose
+
+$ docker-compose up -d
+$ docker run -d -p 80:80 --name my-wordpress-container my-wordpress-image
+
+
 
 
